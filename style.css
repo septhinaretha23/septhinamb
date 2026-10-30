@@ -1,0 +1,465 @@
+/* =========================================
+   RESET
+   ========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+   ========================================= */
+
+body {
+    font-family: "Comic Sans MS", "Trebuchet MS", sans-serif;
+    background: #fff7fa;
+    color: #68434d;
+    min-height: 100vh;
+}
+
+
+/* =========================================
+   HEADER
+   ========================================= */
+
+header {
+    background: linear-gradient(
+        135deg,
+        #ffdce9,
+        #ffeaf1,
+        #fff0d9
+    );
+
+    text-align: center;
+    padding: 38px 20px;
+
+    border-bottom: 3px solid #f3b5c9;
+
+    box-shadow: 0 4px 15px rgba(190, 110, 135, 0.15);
+}
+
+header h1 {
+    font-family: "Comic Sans MS", cursive;
+    color: #d45b83;
+    font-size: 43px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #a75d72;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   NAVIGASI
+   ========================================= */
+
+nav {
+    background: #fff;
+    text-align: center;
+    padding: 15px 10px;
+
+    border-bottom: 2px solid #f4d4df;
+
+    box-shadow: 0 3px 10px rgba(190, 110, 135, 0.08);
+}
+
+nav a {
+    display: inline-block;
+
+    color: #9b526d;
+    background: #fff5f8;
+
+    text-decoration: none;
+
+    padding: 9px 17px;
+    margin: 4px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    border: 1px solid #f2ccd9;
+
+    transition: 0.3s ease;
+}
+
+nav a:hover {
+    background: #f29abb;
+    color: white;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 5px 12px rgba(210, 100, 135, 0.2);
+}
+
+
+/* =========================================
+   MAIN
+   ========================================= */
+
+main {
+    width: 88%;
+    max-width: 1050px;
+
+    margin: 35px auto;
+}
+
+main > h2 {
+    text-align: center;
+
+    color: #d45b83;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   CARD
+   ========================================= */
+
+.card {
+    background: #ffffff;
+
+    border: 2px solid #f5d5df;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin: 20px 0;
+
+    box-shadow: 0 6px 18px rgba(190, 110, 135, 0.10);
+
+    transition: 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(190, 110, 135, 0.16);
+
+    border-color: #efabc2;
+}
+
+.card h3 {
+    color: #d45b83;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+.card p {
+    color: #704e58;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+
+    margin-bottom: 10px;
+}
+
+
+/* =========================================
+   HOME
+   ========================================= */
+
+.welcome {
+    background: linear-gradient(
+        135deg,
+        #fff,
+        #fff1f6
+    );
+
+    text-align: center;
+
+    padding: 40px 30px;
+
+    border-radius: 25px;
+
+    border: 2px solid #f5d5df;
+
+    box-shadow: 0 7px 20px rgba(190, 110, 135, 0.10);
+}
+
+.welcome h2 {
+    color: #d45b83;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 34px;
+
+    margin-bottom: 12px;
+}
+
+.welcome .tagline {
+    color: #e17b9b;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    margin-bottom: 15px;
+}
+
+.welcome p {
+    line-height: 1.8;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================================
+   CARD CONTAINER
+   ========================================= */
+
+.cards {
+    display: flex;
+
+    gap: 20px;
+
+    justify-content: center;
+}
+
+.cards .card {
+    flex: 1;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   BUTTON
+   ========================================= */
+
+.btn {
+    display: inline-block;
+
+    background: #ed8eae;
+
+    color: white;
+
+    text-decoration: none;
+
+    padding: 10px 22px;
+
+    border-radius: 25px;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-weight: bold;
+
+    border: none;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: #d86d91;
+
+    transform: translateY(-3px);
+
+    box-shadow: 0 6px 15px rgba(210, 100, 135, 0.25);
+}
+
+
+
+/* =========================================
+   FORM KONTAK
+   ========================================= */
+
+input,
+textarea,
+select {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    margin: 7px 0 15px;
+
+    border: 1px solid #e3c9c0;
+
+    border-radius: 10px;
+
+    background: #fffaf8;
+
+    color: #5c4033;
+
+    font-family: inherit;
+
+    outline: none;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: #d98c83;
+
+    box-shadow: 0 0 0 3px rgba(217, 140, 131, 0.12);
+}
+
+
+
+/* =========================================
+   PRODUK
+   ========================================= */
+
+.product-card {
+    text-align: center;
+
+    background: #fff;
+
+    border: 2px solid #f5d5df;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin: 20px 0;
+
+    box-shadow: 0 6px 18px rgba(190, 110, 135, 0.10);
+}
+
+.product-card h3 {
+    color: #d45b83;
+
+    font-family: "Comic Sans MS", cursive;
+
+    font-size: 23px;
+
+    margin-bottom: 12px;
+}
+
+.product-card p {
+    line-height: 1.7;
+
+    margin-bottom: 12px;
+}
+
+.price {
+    color: #e06d91 !important;
+
+    font-size: 18px !important;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   SUPPLIER & CABANG
+   ========================================= */
+
+.info-box {
+    background: #fff;
+
+    border: 2px solid #f5d5df;
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    margin: 20px 0;
+
+    box-shadow: 0 6px 18px rgba(190, 110, 135, 0.08);
+}
+
+.info-box h3 {
+    color: #d45b83;
+
+    font-family: "Comic Sans MS", cursive;
+
+    margin-bottom: 10px;
+}
+
+.info-box p {
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #d45b83;
+
+    color: white;
+
+    text-align: center;
+
+    padding: 25px 15px;
+
+    margin-top: 45px;
+
+    border-top: 5px solid #f3b5c9;
+}
+
+footer p {
+    margin: 7px 0;
+
+    color: #fff7fa;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+
+@media (max-width: 768px) {
+
+    main {
+        width: 92%;
+    }
+
+    .cards {
+        flex-direction: column;
+    }
+
+    header h1 {
+        font-size: 35px;
+    }
+
+    nav a {
+        font-size: 13px;
+        padding: 8px 12px;
+    }
+}
+
+
+@media (max-width: 480px) {
+
+    header h1 {
+        font-size: 30px;
+    }
+
+    nav a {
+        display: block;
+        margin: 5px 20px;
+    }
+
+    main {
+        width: 94%;
+    }
+
+    .welcome h2 {
+        font-size: 27px;
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontak | d'Joie</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .order-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:18px; }
+        .order-actions .btn { text-align:center; flex:1 1 180px; }
+        .social-note { font-size:14px; color:#8b6b60; margin-top:12px; }
+        .social-links { display:flex; flex-wrap:wrap; gap:10px; margin-top:15px; }
+        .social-links a { text-decoration:none; }
+        @media(max-width:480px) { .order-actions .btn { flex-basis:100%; } }
+    </style>
+</head>
+<body>
+<header>
+    <h1>d'Joie</h1>
+    <p>Where Flavors Meets Happiness</p>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="profil.html">Profil</a>
+    <a href="product.html">Product</a>
+    <a href="toko-cabang.html">Toko Cabang</a>
+    <a href="supplier.html">Supplier</a>
+    <a href="kontak.html">Kontak</a>
+</nav>
+
+<main>
+    <h2>💌 Hubungi Kami</h2>
+
+    <section class="card">
+        <h3>📱 Informasi Kontak</h3>
+        <p>Mau bertanya atau ingin memesan Cheese Tart? Hubungi d'Joie melalui media sosial kami.</p>
+        <p>📱 <b>WhatsApp:</b> 081632138821</p>
+        <p>📸 <b>Instagram:</b> @djoiebdg</p>
+        <p>📧 <b>Gmail:</b> djoie.cheesetart@gmail.com</p>
+    </section>
+
+    <section class="card">
+        <h3>🛒 Form Pemesanan Cheese Tart</h3>
+        <p>Isi data pesanan di bawah ini, lalu pilih media yang ingin digunakan untuk mengirim pesanan.</p>
+
+        <form id="orderForm">
+            <label for="nama">Nama:</label>
+            <input id="nama" name="nama" type="text" placeholder="Masukkan nama kamu" required>
+
+            <label for="wa">No. WhatsApp:</label>
+            <input id="wa" name="wa" type="tel" placeholder="Masukkan nomor WhatsApp kamu" required>
+
+            <label for="produk">Pilihan Produk:</label>
+            <select id="produk" name="produk" required>
+                <option value="">-- Pilih Produk --</option>
+                <option value="Original Cheese Tart - Rp40.000">Original Cheese Tart - Rp40.000</option>
+                <option value="Biscoff Cheese Tart">Biscoff Cheese Tart Rp 45.000</option>
+                <option value="Berry Cheese Tart">Berry Cheese Tart Rp 45.000</option>
+                <option value="Whole Classic Cheesetart">Whole Classic Cheesetart Rp 329.000</option>
+            </select>
+
+            <label for="jumlah">Jumlah Pesanan:</label>
+            <input id="jumlah" name="jumlah" type="number" min="1" step="1" placeholder="Contoh: 3" required>
+
+            <label for="pesan">Catatan Pesanan:</label>
+            <textarea id="pesan" name="pesan" rows="4" placeholder="Tulis catatan atau permintaan kamu (opsional)"></textarea>
+
+            <div class="order-actions">
+                <button type="button" class="btn" onclick="sendOrder('whatsapp')">💚 Pesan via WhatsApp</button>
+                <button type="button" class="btn" onclick="sendOrder('gmail')">📧 Pesan via Gmail</button>
+                <button type="button" class="btn" onclick="sendOrder('instagram')">📸 Lanjut ke Instagram</button>
+            </div>
+            <p class="social-note">Catatan: Instagram tidak menyediakan pengiriman pesan otomatis dari halaman web ini. Detail pesanan akan ditampilkan agar kamu bisa menyalinnya ke DM.</p>
+        </form>
+    </section>
+
+    <section class="card sparkle">
+        <h3>✨ Terima Kasih!</h3>
+        <p>Terima kasih sudah tertarik dengan Cheese Tart kami. Kami siap membantu dan melayani pesanan kamu dengan senang hati. 🧀💗</p>
+        <a href="product.html" class="btn">🧀 Lihat Produk</a>
+        <a href="index.html" class="btn">🏠 Kembali ke Home</a>
+    </section>
+</main>
+
+<footer>
+    <p>🧀 Cheese Tart</p>
+    <p>Creamy • Cheesy • Crunchy • Yummy</p>
+    <p>© 2026 d'Joie Cheese Tart. All Rights Reserved.</p>
+</footer>
+
+<script>
+function sendOrder(platform) {
+    const form = document.getElementById('orderForm');
+    if (!form.reportValidity()) return;
+
+    const nama = document.getElementById('nama').value.trim();
+    const wa = document.getElementById('wa').value.trim();
+    const produk = document.getElementById('produk').value;
+    const jumlah = document.getElementById('jumlah').value;
+    const pesan = document.getElementById('pesan').value.trim() || '-';
+
+    const message = `Halo d'Joie! Saya ingin memesan Cheese Tart.\n\nNama: ${nama}\nNo. WhatsApp: ${wa}\nProduk: ${produk}\nJumlah: ${jumlah}\nCatatan: ${pesan}\n\nTerima kasih!`;
+    const encoded = encodeURIComponent(message);
+
+    if (platform === 'whatsapp') {
+        // Ganti nomor di bawah dengan nomor WhatsApp toko dalam format internasional,
+        // tanpa tanda +, spasi, atau angka 0 di depan. Contoh Indonesia: 
+        const nomorToko = "6281632138821"
+       if (nomorToko.includes('x')) {
+            alert('Nomor WhatsApp toko belum diatur. Ganti 081632138821 di kode JavaScript dengan nomor WhatsApp d’Joie yang benar.');
+            return;
+        }
+        window.open(`https://wa.me/${nomorToko}?text=${encoded}`, '_blank');
+    } else if (platform === 'gmail') {
+        const emailToko = 'djoie.cheesetart@gmail.com';
+        window.location.href = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(emailToko)}&su=${encodeURIComponent("Pesanan Cheese Tart - d'Joie")}&body=${encoded}`;
+    } else if (platform === 'instagram') {
+        alert('Salin detail pesanan berikut, lalu kirim melalui DM Instagram d’Joie:\n\n' + message);
+        window.open('https://www.instagram.com/djoiebdg/', '_blank');
+    } else if (platform === 'facebook') {
+        alert('Salin detail pesanan berikut, lalu kirim melalui Facebook d’Joie:\n\n' + message);
+        // Ganti URL di bawah dengan tautan halaman Facebook resmi toko.
+        window.open('https://www.facebook.com/', '_blank');
+    }
+}
+</script>
+</body>
+</html>
